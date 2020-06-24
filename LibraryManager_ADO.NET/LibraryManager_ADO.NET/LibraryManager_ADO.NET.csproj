@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4FAAAE74-14A7-4E45-BF41-484EA1B08342}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>LibraryManager_ADO.NET</RootNamespace>
+    <AssemblyName>LibraryManager_ADO.NET</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EPPlus, Version=5.1.2.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.5.1.2\lib\net45\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller\AccountDAO.cs" />
+    <Compile Include="Controller\AccountManagerDAO.cs" />
+    <Compile Include="Controller\AccountTypeDAO.cs" />
+    <Compile Include="Controller\BookBorrowDAO.cs" />
+    <Compile Include="Controller\BookCategoryDAO.cs" />
+    <Compile Include="Controller\BookDAO.cs" />
+    <Compile Include="Controller\BookItemDAO.cs" />
+    <Compile Include="Controller\BookShowDAO.cs" />
+    <Compile Include="Controller\BorrowDAO.cs" />
+    <Compile Include="Controller\DataProvider.cs" />
+    <Compile Include="Controller\LibrarianDAO.cs" />
+    <Compile Include="Controller\MemberDAO.cs" />
+    <Compile Include="Controller\PublisherDAO.cs" />
+    <Compile Include="Controller\StatisticsDAO.cs" />
+    <Compile Include="Models\AccountDTO.cs" />
+    <Compile Include="Models\AccountManagerDTO.cs" />
+    <Compile Include="Models\AccountTypeDTO.cs" />
+    <Compile Include="Models\BookBorrowDTO.cs" />
+    <Compile Include="Models\BookCategoryDTO.cs" />
+    <Compile Include="Models\BookDTO.cs" />
+    <Compile Include="Models\BookItemDTO.cs" />
+    <Compile Include="Models\BookShowDTO.cs" />
+    <Compile Include="Models\BorrowDTO.cs" />
+    <Compile Include="Models\LibrarianDTO.cs" />
+    <Compile Include="Models\MemberDTO.cs" />
+    <Compile Include="Models\PersonDTO.cs" />
+    <Compile Include="Models\PublisherDTO.cs" />
+    <Compile Include="Models\StatisticsDTO.cs" />
+    <Compile Include="Utility\ExcelFile.cs" />
+    <Compile Include="Utility\FormatData.cs" />
+    <Compile Include="View\Customer\fLibraryCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Customer\fLibraryCustomer.Designer.cs">
+      <DependentUpon>fLibraryCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\fBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\fBook.Designer.cs">
+      <DependentUpon>fBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\fBorrowBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\fBorrowBook.Designer.cs">
+      <DependentUpon>fBorrowBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\fLibraryManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Admin\fLibraryManager.Designer.cs">
+      <DependentUpon>fLibraryManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\fLoginBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\fLoginBook.Designer.cs">
+      <DependentUpon>fLoginBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\fPayBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\fPayBook.Designer.cs">
+      <DependentUpon>fPayBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\fLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\fLogin.Designer.cs">
+      <DependentUpon>fLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\Staff\fLibraryStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Staff\fLibraryStaff.Designer.cs">
+      <DependentUpon>fLibraryStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\fStatistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\fStatistics.Designer.cs">
+      <DependentUpon>fStatistics.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\Customer\fLibraryCustomer.resx">
+      <DependentUpon>fLibraryCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\fBook.resx">
+      <DependentUpon>fBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\fBorrowBook.resx">
+      <DependentUpon>fBorrowBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\fLibraryManager.resx">
+      <DependentUpon>fLibraryManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\fLoginBook.resx">
+      <DependentUpon>fLoginBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\fPayBook.resx">
+      <DependentUpon>fPayBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\fLogin.resx">
+      <DependentUpon>fLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="View\fStatistics.resx">
+      <DependentUpon>fStatistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Staff\fLibraryStaff.resx">
+      <DependentUpon>fLibraryStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LoginWindowBackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hidePassword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\showPassword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EXCEL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avartar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\updateavar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\changeavar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\changepass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\true.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addusser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\manager.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cntt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hcmute.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\all.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\borrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addbook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\statistical.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\updatebook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reset.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alltk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
